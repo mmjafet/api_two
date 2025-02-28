@@ -1,0 +1,56 @@
+Prueba las rutas:
+
+Obtener todos los usuarios:
+
+Método: GET
+URL: http://localhost:3003/Us/users
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Crear un nuevo usuario:
+
+Método: POST
+URL: http://localhost:3003/Us/users
+En la pestaña "Body", selecciona "raw" y "JSON" y añade el siguiente JSON:
+{
+    "username": "testuser",
+    "password": "testpassword"
+}
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Iniciar sesión:
+
+Método: POST
+URL: http://localhost:3003/Us/login
+En la pestaña "Body", selecciona "raw" y "JSON" y añade el siguiente JSON:
+{
+    "username": "testuser",
+    "password": "testpassword"
+}
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Obtener un usuario por ID:
+
+Método: GET
+URL: http://localhost:3003/Us/users/{id}
+Reemplaza {id} con el ID del usuario que deseas obtener.
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Obtener un usuario por nombre:
+
+Método: GET
+URL: http://localhost:3003/Us/users/name/{username}
+Reemplaza {username} con el nombre del usuario que deseas obtener.
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Eliminar un usuario:
+
+Método: DELETE
+URL: http://localhost:3003/Us/users/{id}
+Reemplaza {id} con el ID del usuario que deseas eliminar.
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
+Actualizar un usuario:
+
+Método: PUT
+URL: http://localhost:3003/Us/users/{id}
+Reemplaza {id} con el ID del usuario que deseas actualizar.
+En la pestaña "Body", selecciona "raw" y "JSON" y añade el siguiente JSON:
+{
+    "username": "updateduser",
+    "password": "updatedpassword"
+}
+Haz clic en "Send" para enviar la solicitud y ver la respuesta.
