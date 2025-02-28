@@ -1,7 +1,8 @@
 
 
 const greet = ()=>{
-    return {message: "Saludo protegido"};
+    return {message:"Saludo protegido"};
 }
 
-module.exports= {greet}
+
+module.exports = {greet}

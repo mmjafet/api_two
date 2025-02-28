@@ -1,53 +1,53 @@
-const {users} = require("../data/users.js");
-const User = require("../Models/userModel");
+const {User} = require("../models/userModel.js");
 
-//Funcion para la primer ruta
-
+//funcion para la primer ruta 
 //get --> /get-users
-const getAllUsers = async () =>{
+const getAllUsers = async ()=>{
     try {
         const users = await User.find();
+        return users;
     } catch (error) {
         console.error(error);
-        return null;
+        return null;        
     }
-    return users;
+    
 }
 
-//get -->login
-const login =(user, pass) =>{
-    //COLOCAR BIEN EL TOKEN token-falso-1
-    var token = "token-falso-";
-    //const validate= getUserByNameAndPass(user, pass)
-    //console.log(validate);
-    // Validar usuario
-    //if (validate){
-    if (getUserByNameAndPass(user, pass)){
-       token += getUserByNameAndPass(user, pass).id;
-        return {token};
-    }
-    return {message: "usuario o contraseña incorrectos"};
-}
 
-const createUser = async (username, password) =>{
-try { 
-    const newUser = new User({username, password}); 
-    const saveUser = await newUser.save();
-    return saveUser;
+const createUser = async (username, password)=>{
+try {
+    const newUser = new User({username,password});
+    const savedUser = await newUser.save();
+    return savedUser;
 } catch (error) {
     return null;
 }
 
 }
 
-const getUserByNameAndPass = async (user, pass) =>{
+
+const login = async (username,password)=>{
+    const user = await getUserByNameAndPwd(username,password);
+    if (user){
+        var token = `token-falso-${user._id}`;
+        return {token};
+    }
+    return {message:"usuario o contraseña incorrectos"};
+}
+
+const getUserByNameAndPwd = async (username,password)=>{
     try {
-        const user= User.finOne({username, password});
+        const user = await User.findOne({username,password});
         return user;
-        
     } catch (error) {
         return null;
-}}
+    }
+}
 
 
-module.exports= {getAllUsers, createUser ,login}
+
+module.exports = {
+    getAllUsers,
+    login,
+    createUser
+}

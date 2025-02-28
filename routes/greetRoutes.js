@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const { greetProtected } = require("../Controller/greetController");
-const {validarToken} = require("../Middlewares/authMiddlewares");
+const { validarToken } = require("../Middlewares/authMiddleware");
+const {greetProtected} = require("../Controller/greetController");
 
-
-router.get("/saludo-protegido", validarToken, greetProtected);
+router.get("/saludo-protegido",validarToken,greetProtected);
 
 module.exports = router;

@@ -1,13 +1,12 @@
-const moongose = require("mongoose");
-const connectDB = async () =>{
+const mongoose = require("mongoose");
+const connectDB = async ()=>{
     const URL = "mongodb://admin:password@localhost:27017/";
-    try{
-        await moongose.connect(URL);
-        console.log("DB running sucessfully");
-    }catch(err){
-        console.error("Failed to connect to the db :(")
-        console.error(err);
+    try {
+        await mongoose.connect(URL);
+        console.log("Database Running");
+    } catch (error) {
+        console.error("Cant connect to database");
+        console.error(error)        
     }
 }
-
 module.exports = {connectDB};
