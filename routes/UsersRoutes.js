@@ -7,6 +7,12 @@ const {getUsers,
     deleteUserController,
     updateUserController} = require("../Controller/UsersController");
 
-
+router.get("/users",getUsers);
+router.post("/users",createUserController);
+router.post("/login",loginController);
+router.get("/users/:id",getUserByIdController);
+router.get("/users/name/:name",getUserByNameController);
+router.delete("/users/:id",deleteUserController);
+router.put("/users/:id",updateUserController);
 
 module.exports = router;
