@@ -13,6 +13,7 @@ const createUserController = async (req, res) => {
     const { username, password } = req.body;
     const newUser = await createUser(username, password);
     console.log(newUser);
+    console.log(username, password);
     console.log(req.body);
     if (newUser) {
         res.status(201).json(newUser);
