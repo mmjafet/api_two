@@ -15,11 +15,7 @@ const createUserController = async (req, res) => {
     console.log(newUser);
     console.log(username, password);
     console.log(req.body);
-    if (newUser) {
-        res.status(201).json(newUser);
-    } else {
-        res.status(500).json({ message: 'Error al crear el usuario' });
-    }
+  
 }
 
 const loginController = async (req, res) => {
