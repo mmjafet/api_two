@@ -112,12 +112,3 @@ const updateUserController = async (req, res) => {
     }
 }
 
-module.exports = {
-    getUsers,
-    createUserController,
-    loginController,
-    getUserByIdController,
-    getUserByNameController,
-    deleteUserController,
-    updateUserController
-}
