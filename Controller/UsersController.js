@@ -107,12 +107,12 @@ const updateUserController = async (req, res) => {
     const updatedUser = await updateUser(id, updateData);
     if (updatedUser) {
         res.status(200).json(updatedUser);
-    } else {
+
+module.exports = {    } else {
         res.status(500).json({ message: 'Error al actualizar el usuario' });
     }
 }
 
-module.exports = {
     getUsers,
     createUserController,
     loginController,
